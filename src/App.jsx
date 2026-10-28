@@ -15,14 +15,14 @@ function App() {
 
             <PopBrowse />
 
-            
-
-
+        
             <Header />
             <Main />
 
+
         </div>
     </>
+
   )
 }
 
