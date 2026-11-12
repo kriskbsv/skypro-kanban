@@ -1087,3 +1087,14 @@ body {
         display: block;
     }
 }
+.main__loading {
+    width: 100%;
+    min-height: calc(100vh - 70px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px;
+    color: #565EEF;
+}

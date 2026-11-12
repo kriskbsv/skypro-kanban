@@ -15,8 +15,8 @@ function Header() {
                         </div>
                         <nav className="header__nav">
                             <button className="header__btn-main-new _hover01" id="btnMainNew"><a href="#popNewCard">Создать новую задачу</a></button>
-                            <a onClick={() => setIsOpen(!isOpen)} className="header__user _hover02">Ivan Ivanov</a>
-                            {isOpen && <PopUser />}
+                            <a href="#" onClick={(e) => { e.preventDefault(); setIsOpen(!isOpen); }} className="header__user _hover02">Ivan Ivanov</a>
+                            {isOpen && <PopUser onClose={() => setIsOpen(false)} />}
                         </nav>
                     </div>
                 </div>
