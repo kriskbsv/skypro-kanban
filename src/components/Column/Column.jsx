@@ -1,20 +1,22 @@
 import Card from "../Card/Card";
 
-function Column() {
+function Column({ title, cards }) {
     return (
-        <>
         <div className="main__column column">
             <div className="column__title">
-                <p>Без статуса</p>
+                <p>{title}</p>
             </div>
             <div className="cards">
-                <Card />
-                <Card />
-                <Card />
-                <Card />
+                {cards.map((card) => (
+                    <Card
+                        key={card.id}
+                        topic={card.topic}
+                        title={card.title}
+                        date={card.date}
+                    />
+                ))}
             </div>
         </div>
-        </>
     );
 }
 
