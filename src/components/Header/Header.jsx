@@ -1,26 +1,38 @@
 import { useState } from "react";
 import PopUser from "../popups/PopUser/PopUser";
+import { Container } from "../../App.styled";
+import {
+    HeaderBlock,
+    HeaderBtnMainNew,
+    HeaderLogo,
+    HeaderNav,
+    HeaderUser,
+    HeaderWrap,
+} from "./Header.styled";
 
 function Header() {
     const [isOpen, setIsOpen] = useState(false);
+
+    const toggleUserPopup = (e) => {
+        e.preventDefault();
+        setIsOpen(!isOpen);
+    };
+
     return (
-        <header className="header">
-            <div className="container">
-                <div className="header__block">
-                    <div className="header__logo _show _light">
-                        <a href="" target="_self"><img src="images/logo.png" alt="logo"/></a>
-                    </div>
-                        <div className="header__logo _dark">
-                            <a href="" target="_self"><img src="images/logo_dark.png" alt="logo"/></a>
-                        </div>
-                        <nav className="header__nav">
-                            <button className="header__btn-main-new _hover01" id="btnMainNew"><a href="#popNewCard">Создать новую задачу</a></button>
-                            <a href="#" onClick={(e) => { e.preventDefault(); setIsOpen(!isOpen); }} className="header__user _hover02">Ivan Ivanov</a>
-                            {isOpen && <PopUser onClose={() => setIsOpen(false)} />}
-                        </nav>
-                    </div>
-                </div>
-            </header>
+        <HeaderWrap>
+            <Container>
+                <HeaderBlock>
+                    <a href="" target="_self">
+                        <HeaderLogo src="images/logo.png" alt="logo" />
+                    </a>
+                    <HeaderNav>
+                        <HeaderBtnMainNew href="#popNewCard">Создать новую задачу</HeaderBtnMainNew>
+                        <HeaderUser href="#" onClick={toggleUserPopup}>Ivan Ivanov</HeaderUser>
+                        {isOpen && <PopUser onClose={() => setIsOpen(false)} />}
+                    </HeaderNav>
+                </HeaderBlock>
+            </Container>
+        </HeaderWrap>
     );
 }
 
