@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import {
     CardBtn,
     CardBtnDot,
@@ -12,7 +13,7 @@ import {
     CardWrap,
 } from "./Card.styled";
 
-function Card({ topic, title, date }) {
+function Card({ id, topic, title, date }) {
     return (
         <CardItem>
             <CardWrap>
@@ -20,18 +21,18 @@ function Card({ topic, title, date }) {
                     <CardTheme $topic={topic}>
                         <CardThemeText>{topic}</CardThemeText>
                     </CardTheme>
-                    <a href="#popBrowse" target="_self">
+                    <Link to={`/card/${id}`}>
                         <CardBtn>
                             <CardBtnDot />
                             <CardBtnDot />
                             <CardBtnDot />
                         </CardBtn>
-                    </a>
+                    </Link>
                 </CardGroup>
                 <CardContent>
-                    <a href="#popBrowse" target="_self">
+                    <Link to={`/card/${id}`}>
                         <CardTitle>{title}</CardTitle>
-                    </a>
+                    </Link>
                     <CardDate>
                         <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
                             <g clipPath="url(#clip0_1_415)">

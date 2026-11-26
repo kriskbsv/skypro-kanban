@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import PopUser from "../popups/PopUser/PopUser";
 import { Container } from "../../App.styled";
 import {
@@ -22,11 +23,11 @@ function Header() {
         <HeaderWrap>
             <Container>
                 <HeaderBlock>
-                    <a href="" target="_self">
-                        <HeaderLogo src="images/logo.png" alt="logo" />
-                    </a>
+                    <Link to="/">
+                        <HeaderLogo src="/images/logo.png" alt="logo" />
+                    </Link>
                     <HeaderNav>
-                        <HeaderBtnMainNew href="#popNewCard">Создать новую задачу</HeaderBtnMainNew>
+                        <HeaderBtnMainNew to="/new-card">Создать новую задачу</HeaderBtnMainNew>
                         <HeaderUser href="#" onClick={toggleUserPopup}>Ivan Ivanov</HeaderUser>
                         {isOpen && <PopUser onClose={() => setIsOpen(false)} />}
                     </HeaderNav>

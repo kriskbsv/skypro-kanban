@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const PopUserSet = styled.div`
   display: block;
@@ -88,7 +89,7 @@ export const PopUserCheckbox = styled.input.attrs({ type: "checkbox" })`
   }
 `;
 
-export const PopUserExit = styled.a`
+export const PopUserExit = styled(Link)`
   display: inline-flex;
   align-items: center;
   justify-content: center;
