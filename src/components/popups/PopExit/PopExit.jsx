@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import {
   PopExitBlock,
   PopExitContainer,
@@ -8,15 +9,15 @@ import {
   PopExitYes,
 } from "./PopExit.styled";
 
-function PopExit() {
+function PopExit({ onLogout }) {
   return (
-    <PopExitWrap id="popExit">
+    <PopExitWrap>
       <PopExitContainer>
         <PopExitBlock>
           <PopExitTitle>Выйти из аккаунта?</PopExitTitle>
           <PopExitFormGroup>
-            <PopExitYes href="#">Да, выйти</PopExitYes>
-            <PopExitNo href="#">Нет, остаться</PopExitNo>
+            <PopExitYes type="button" onClick={onLogout}>Да, выйти</PopExitYes>
+            <PopExitNo as={Link} to="/">Нет, остаться</PopExitNo>
           </PopExitFormGroup>
         </PopExitBlock>
       </PopExitContainer>

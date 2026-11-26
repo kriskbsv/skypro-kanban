@@ -24,7 +24,7 @@ function PopUser({ onClose }) {
                 <PopUserThemeText>Темная тема</PopUserThemeText>
                 <PopUserCheckbox name="checkbox" />
             </PopUserTheme>
-            <PopUserExit href="#popExit">Выйти</PopUserExit>
+            <PopUserExit to="/exit" onClick={onClose}>Выйти</PopUserExit>
         </PopUserSet>
     );
 }

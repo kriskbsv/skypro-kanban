@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const PopExitWrap = styled.div`
-  display: none;
+  display: block;
   width: 100%;
   height: 100%;
   min-width: 320px;
@@ -10,10 +10,6 @@ export const PopExitWrap = styled.div`
   top: 0;
   left: 0;
   z-index: 5;
-
-  &:target {
-    display: block;
-  }
 `;
 
 export const PopExitContainer = styled.div`
@@ -64,9 +60,10 @@ export const PopExitFormGroup = styled.div`
   }
 `;
 
-const PopExitButton = styled.a`
+const PopExitButton = styled.button`
   width: 153px;
   height: 30px;
+  border: none;
   border-radius: 4px;
   display: flex;
   align-items: center;
